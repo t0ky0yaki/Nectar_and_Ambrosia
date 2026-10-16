@@ -1,6 +1,6 @@
 <?php
 
-$serverName = "LAPTOP-5SE5KLER\\SQLEXPRESS";
+$serverName = "<SERVER_NAME>\\SQLEXPRESS";
 
 $connectionOptions = [
     "Database" => "DLSU",

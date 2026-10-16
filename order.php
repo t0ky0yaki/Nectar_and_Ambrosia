@@ -146,7 +146,6 @@ sqlsrv_close($conn);
           <button class="btn btn-primary" type="submit">Search</button>
         </div>
 
-        <--si js na bahala sa pagfill up ng autosuggest-->
         <div id="searchSuggestions" class="search-suggestions"></div>
       </form>
     </div>

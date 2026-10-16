@@ -332,6 +332,66 @@ sqlsrv_close($conn);
     .search-item:hover,.search-item.active{ background:#eaf3ff; }
     .search-left{ font-weight:700; color:#0f172a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .search-right{ font-size:13px; color:#64748b; white-space:nowrap; }
+
+    .btn-theme {
+        background: linear-gradient(135deg, #4cabdc, #2f6f91);
+        color: #ffffff;
+        border: 1px solid #d4af37;
+        border-radius: 9px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        box-shadow: 0 3px 8px rgba(31, 59, 92, 0.15);
+    }
+
+    .btn-theme:hover {
+        background: linear-gradient(135deg, #368fbd, #1f4e6b);
+        color: #ffffff;
+        border-color: #b8962e;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(31, 59, 92, 0.22);
+    }
+
+    .btn-theme-outline {
+        background: #ffffff;
+        color: #1f3b5c;
+        border: 1px solid #d4af37;
+        border-radius: 9px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+    .btn-theme-outline:hover {
+        background: #e1ecff;
+        color: #1f3b5c;
+        border-color: #4cabdc;
+    }
+
+    .btn-theme-edit {
+        background: #f4d77b;
+        color: #493b17;
+        border: 1px solid #d4af37;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+    .btn-theme-edit:hover {
+        background: #e8c45c;
+        color: #493b17;
+    }
+
+    .btn-theme-delete {
+        background: #f8e5e5;
+        color: #8b3030;
+        border: 1px solid #d9a3a3;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+    .btn-theme-delete:hover {
+        background: #efd0d0;
+        color: #702020;
+    }
+
     </style>
 </head>
 <body>
@@ -345,7 +405,7 @@ sqlsrv_close($conn);
 <div class="container">
 
     <div class="mb-3 d-flex gap-2">
-        <a href="update.php?mode=add" class="btn <?= $mode === 'add' ? 'btn-primary' : 'btn-outline-primary' ?>">Add Items</a>
+        <a href="update.php?mode=add" class="btn <?= $mode === 'add' ? 'btn-theme' : 'btn-theme-outline' ?>">Add Items</a>
         <a href="update.php?mode=update" class="btn <?= $mode === 'update' ? 'btn-primary' : 'btn-outline-primary' ?>">Update Items</a>
     </div>
 
@@ -417,7 +477,7 @@ sqlsrv_close($conn);
                 </small>
             </div>
 
-            <button class="btn btn-primary">Add Item</button>
+            <button class="btn btn-theme">Add Item</button>
         </form>
     </div>
 
@@ -623,7 +683,7 @@ sqlsrv_close($conn);
             </div>
 
             <div class="col-12 d-flex gap-2">
-                <a class="btn btn-outline-secondary btn-sm" href="update.php?mode=update">Reset</a>
+                <a class="btn btn-theme-outline btn-sm" href="update.php?mode=update">Reset</a>
             </div>
         </form>
 
@@ -652,12 +712,12 @@ sqlsrv_close($conn);
                                     if ($catFilter !== '') $qs .= "&cat=" . urlencode($catFilter);
                                     if ($sort !== '')     $qs .= "&sort=" . urlencode($sort);
                                 ?>
-                                <a href="update.php?<?= $qs ?>&edit_id=<?= $m['MENU_ID'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="update.php?<?= $qs ?>&edit_id=<?= $m['MENU_ID'] ?>" class="btn btn-theme-edit btn-sm">Edit</a>
 
                                 <form method="post" onsubmit="return confirm('Delete item: <?= htmlspecialchars($m['MENU_NAME'], ENT_QUOTES) ?>?');" style="margin:0;">
                                     <input type="hidden" name="action" value="delete">
                                     <input type="hidden" name="MENU_ID" value="<?= $m['MENU_ID'] ?>">
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    <button type="submit" class="btn btn-theme-delete btn-sm">Delete</button>
                                 </form>
                             </div>
                         </td>

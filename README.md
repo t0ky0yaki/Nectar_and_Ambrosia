@@ -16,8 +16,10 @@
 5. Open the application in your browser using `http://localhost/YOUR_PROJECT_FOLDER/`.
 
 Admin Username: percy
+
 Admin Password: password
 
 Cashier Username: cashier
+
 Cashier Password: password
 

@@ -1,10 +1,7 @@
 <?php
-date_default_timezone_set('Asia/Manila');
+require_once __DIR__ . '/config.php';
 
-$serverName = "LAPTOP-5SE5KLER\\SQLEXPRESS";
-$connectionOptions = ["Database" => "DLSU", "Uid" => "", "PWD" => ""];
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-if (!$conn) die(print_r(sqlsrv_errors(), true));
+date_default_timezone_set('Asia/Manila');
 
 function getq($k, $d=''){ return (isset($_GET[$k]) && $_GET[$k] !== '') ? $_GET[$k] : $d; }
 

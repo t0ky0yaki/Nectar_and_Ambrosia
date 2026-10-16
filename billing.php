@@ -1,16 +1,7 @@
 <?php
 session_start();
 date_default_timezone_set('Asia/Manila');
-$serverName = "LAPTOP-5SE5KLER\\SQLEXPRESS";
-$connectionOptions = [
-    "Database" => "DLSU",
-    "Uid"      => "",
-    "PWD"      => ""
-];
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-if ($conn === false) {
-    die(print_r(sqlsrv_errors(), true));
-}
+require_once __DIR__ . '/config.php';
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 if (empty($cart)) {
     header("Location: direct.php");

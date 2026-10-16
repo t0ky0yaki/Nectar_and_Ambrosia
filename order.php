@@ -1,10 +1,7 @@
 <?php
 session_start();
-$serverName = "LAPTOP-5SE5KLER\\SQLEXPRESS";
-$connectionOptions = ["Database"=>"DLSU","Uid"=>"","PWD"=>""];
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-if (!$conn) 
-  die(print_r(sqlsrv_errors(), true));
+require_once __DIR__ . '/config.php';
+
 function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES); }
 
 $user = $_SESSION['user'] ?? 'Cashier';

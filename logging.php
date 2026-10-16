@@ -1,17 +1,7 @@
 <?php
 session_start();
 
-$serverName = "LAPTOP-5SE5KLER\\SQLEXPRESS";
-$connectionOptions = [
-    "Database" => "DLSU",
-    "Uid" => "",
-    "PWD" => ""
-];
-
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-if ($conn === false) {
-    die(print_r(sqlsrv_errors(), true));
-}
+require_once __DIR__ . '/config.php';
 
 $user = isset($_POST['username']) ? trim($_POST['username']) : '';
 $pass = isset($_POST['password']) ? $_POST['password'] : '';
